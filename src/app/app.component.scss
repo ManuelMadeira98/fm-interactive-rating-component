@@ -114,7 +114,6 @@ $button-size-desktop: 3.2rem;
 @media (min-width: 450px) {
 	.rating-card {
 		border-radius: 2em;
-		min-height: 440px;
 
 		&--icon {
 			width: $button-size-desktop;
