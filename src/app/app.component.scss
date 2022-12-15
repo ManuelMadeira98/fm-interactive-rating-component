@@ -1,8 +1,8 @@
 $content-padding: 1.5rem;
 $content-spacing: 1rem;
 
-$button-size-mobile: 2.5rem;
-$button-size-desktop: 3rem;
+$button-size-mobile: 2.7rem;
+$button-size-desktop: 3.2rem;
 
 .showcase {
 	padding: $content-padding;
@@ -14,8 +14,9 @@ $button-size-desktop: 3rem;
 	padding: 2rem $content-padding;
 	border-radius: 1em;
 	background-color: var(--clr-neutral-700);
-	max-width: 400px;
-	min-height: 400px;
+	max-width: 420px;
+	min-height: 430px;
+	background: radial-gradient(ellipse at center top, var(--clr-neutral-200) 0%, var(--clr-neutral-700) 100%);
 
 	&.center-aligned {
 		text-align: center;
@@ -27,7 +28,7 @@ $button-size-desktop: 3rem;
 		height: $button-size-mobile;
 		border-radius: 50%;
 		color: var(--clr-neutral-300);
-		background-color: var(--clr-neutral-700);
+		background-color: var(--clr-neutral-600);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -35,11 +36,11 @@ $button-size-desktop: 3rem;
 
 	&--title {
 		color: var(--clr-neutral-100);
+		font-size: 1.8rem;
 	}
 
 	&--description {
-		font-size: 0.9rem;
-		line-height: 1.5;
+		line-height: 1.6;
 		color: var(--clr-neutral-300);
 	}
 
@@ -55,10 +56,10 @@ $button-size-desktop: 3rem;
 			height: $button-size-mobile;
 			border-radius: 50%;
 			color: var(--clr-neutral-300);
-			background-color: var(--clr-neutral-700);
-			font-size: 0.8rem;
+			background-color: var(--clr-neutral-600);
 			padding-top: 0.35rem;
 			transition: 0.3s;
+			font-size: 0.9rem;
 
 			&:hover {
 				cursor: pointer;
@@ -77,15 +78,16 @@ $button-size-desktop: 3rem;
 
 	.submit {
 		width: 100%;
+		padding: 0.33rem 1rem;
 		border: 0;
 		background-color: var(--clr-primary-500);
-		padding: 0.75rem 2.25rem;
 		border-radius: 10em;
 		text-transform: uppercase;
 		color: var(--clr-neutral-100);
 		letter-spacing: 2px;
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 		transition: 0.3s;
+		font-weight: var(--font-bold);
 	
 		&:hover, &:focus {
 			cursor: pointer;
@@ -99,7 +101,7 @@ $button-size-desktop: 3rem;
 		font-size: 0.9rem;
 		padding: 0.3em 0.9em;
 		border-radius: 10em;
-		background-color: var(--clr-neutral-700);
+		background-color: var(--clr-neutral-600);
 	}
 
 	&--message {
@@ -112,6 +114,7 @@ $button-size-desktop: 3rem;
 @media (min-width: 450px) {
 	.rating-card {
 		border-radius: 2em;
+		min-height: 440px;
 
 		&--icon {
 			width: $button-size-desktop;
@@ -119,7 +122,7 @@ $button-size-desktop: 3rem;
 		}
 
 		&--description {
-			margin-top: -0.75rem;
+			margin-top: -$content-spacing;
 		}
 
 		.ratings {
@@ -128,6 +131,7 @@ $button-size-desktop: 3rem;
 			&--button {
 				width: $button-size-desktop;
 				height: $button-size-desktop;
+				font-size: 1rem;
 			}
 		}
 	}
