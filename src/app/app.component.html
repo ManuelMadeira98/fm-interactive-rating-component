@@ -1,0 +1,16 @@
+<main class="showcase">
+	<article class="rating-card">
+		<h1 class="rating-card--title">How did we do?</h1>
+		<p class="rating-card--description">
+			Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
+		</p>
+
+		<div class="rating">
+			<ng-container *ngFor="let button of buttons">
+				<button class="rating--button" [class.selected]="button.selected" (click)="onRatingButtonClick(button)">{{ button.label }}</button>
+			</ng-container>
+		</div>
+
+		<button class="submit">Submit</button>
+	</article>
+</main>

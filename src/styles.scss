@@ -1,0 +1,101 @@
+:root {
+	--clr-primary-500: hsl(25, 97%, 53%);
+
+	--clr-neutral-900: hsl(216, 12%, 8%);
+	--clr-neutral-800: hsl(213, 19%, 18%);
+	--clr-neutral-700: hsla(212, 19%, 38%, 0.3);
+	--clr-neutral-400: hsl(216, 12%, 54%);
+	--clr-neutral-300: hsl(217, 12%, 63%);
+	--clr-neutral-100: hsl(0, 0%, 100%);
+
+	--ff-base: 'Overpass', sans-serif;
+
+	--font-regular: 400;
+	--font-bold: 700;
+}
+
+/*
+	1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/*
+	2. Remove default margin
+*/
+* {
+	margin: 0;
+}
+
+/*	
+	3. Allow percentage-based heights in the application
+*/
+html,
+body {
+	height: 100%;
+}
+
+/*
+	Typographic tweaks!
+	4. Add accessible line-height
+	5. Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+	6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/*
+	7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/*
+	8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1;
+}
+
+/* General styling */
+body {
+	background-color: var(--clr-neutral-900);
+	font-family: var(--ff-base);
+	font-weight: var(--font-regular);
+	color: var(--clr-neutral-400);
+
+	display: grid;
+	place-content: center;
+}
