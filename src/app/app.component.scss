@@ -1,4 +1,8 @@
 $content-padding: 1.5rem;
+$content-spacing: 1rem;
+
+$button-size-mobile: 2.5rem;
+$button-size-desktop: 3rem;
 
 .showcase {
 	padding: $content-padding;
@@ -6,11 +10,28 @@ $content-padding: 1.5rem;
 
 .rating-card {
 	display: grid;
-	gap: $content-padding;
+	gap: $content-spacing;
 	padding: 2rem $content-padding;
 	border-radius: 1em;
-	background-color: hsl(213, 19%, 18%);
-	max-width: 600px;
+	background-color: var(--clr-neutral-700);
+	max-width: 400px;
+	min-height: 400px;
+
+	&.center-aligned {
+		text-align: center;
+		place-items: center;
+	}
+
+	&--icon {
+		width: $button-size-mobile;
+		height: $button-size-mobile;
+		border-radius: 50%;
+		color: var(--clr-neutral-300);
+		background-color: var(--clr-neutral-700);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
 	&--title {
 		color: var(--clr-neutral-100);
@@ -22,7 +43,7 @@ $content-padding: 1.5rem;
 		color: var(--clr-neutral-300);
 	}
 
-	.rating {
+	.ratings {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
@@ -30,13 +51,14 @@ $content-padding: 1.5rem;
 
 		&--button {
 			border: 0;
-			width: 2.5rem;
-			height: 2.5rem;
+			width: $button-size-mobile;
+			height: $button-size-mobile;
 			border-radius: 50%;
 			color: var(--clr-neutral-300);
 			background-color: var(--clr-neutral-700);
 			font-size: 0.8rem;
 			padding-top: 0.35rem;
+			transition: 0.3s;
 
 			&:hover {
 				cursor: pointer;
@@ -52,7 +74,7 @@ $content-padding: 1.5rem;
 			}
 		}
 	}
-	
+
 	.submit {
 		width: 100%;
 		border: 0;
@@ -63,11 +85,50 @@ $content-padding: 1.5rem;
 		color: var(--clr-neutral-100);
 		letter-spacing: 2px;
 		font-size: 0.8rem;
+		transition: 0.3s;
 	
 		&:hover, &:focus {
 			cursor: pointer;
 			background-color: var(--clr-neutral-100);
 			color: var(--clr-primary-500);
+		}
+	}
+
+	&--final-rating {
+		color: var(--clr-primary-500);
+		font-size: 0.9rem;
+		padding: 0.3em 0.9em;
+		border-radius: 10em;
+		background-color: var(--clr-neutral-700);
+	}
+
+	&--message {
+		margin-top: $content-spacing;
+		font-size: 0.9rem;
+		color: var(--clr-neutral-300);
+	}
+}
+
+@media (min-width: 450px) {
+	.rating-card {
+		border-radius: 2em;
+
+		&--icon {
+			width: $button-size-desktop;
+			height: $button-size-desktop;
+		}
+
+		&--description {
+			margin-top: -0.75rem;
+		}
+
+		.ratings {
+			margin-top: 0;
+
+			&--button {
+				width: $button-size-desktop;
+				height: $button-size-desktop;
+			}
 		}
 	}
 }

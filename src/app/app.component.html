@@ -1,16 +1,37 @@
 <main class="showcase">
-	<article class="rating-card">
-		<h1 class="rating-card--title">How did we do?</h1>
-		<p class="rating-card--description">
-			Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
-		</p>
+	<article class="rating-card" [class.center-aligned]="isSubmited">
+		<ng-container *ngIf="!isSubmited; else thanks">
+			<div class="rating-card--icon">
+				<img src="/assets/icon-star.svg" alt="Icon Star">
+			</div>
+	
+			<h1 class="rating-card--title">How did we do?</h1>
+			<p class="rating-card--description">
+				Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
+			</p>
+	
+			<div class="ratings">
+				<ng-container *ngFor="let button of buttons">
+					<button class="ratings--button" [class.selected]="button.selected" (click)="onRatingButtonClick(button)">{{ button.label }}</button>
+				</ng-container>
+			</div>
+	
+			<button class="submit" (click)="onRatingSubmit()">Submit</button>
+		</ng-container>
 
-		<div class="rating">
-			<ng-container *ngFor="let button of buttons">
-				<button class="rating--button" [class.selected]="button.selected" (click)="onRatingButtonClick(button)">{{ button.label }}</button>
-			</ng-container>
-		</div>
+		<ng-template #thanks>
+			<img src="/assets/illustration-thank-you.svg" alt="Thank You">
 
-		<button class="submit">Submit</button>
+			<p class="rating-card--final-rating">You selected 4 out of 5</p>
+
+			<div class="rating-card--thanks">
+				<h1 class="rating-card--title">Thank you!</h1>
+	
+				<p class="rating-card--message">
+					We appreciate you taking the time to give a rating. If you ever need more support, 
+					don’t hesitate to get in touch!
+				</p>
+			</div>
+		</ng-template>
 	</article>
 </main>

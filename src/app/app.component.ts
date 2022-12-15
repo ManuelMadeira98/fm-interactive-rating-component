@@ -19,11 +19,21 @@ export class AppComponent {
 		{ label: '5', selected: false },
 	];
 
+	selectedButton!: RatingButton;
+	isSubmited = false;
+
 	onRatingButtonClick(button: RatingButton) {
 		// Set the selected state of all buttons to false
 		this.buttons.forEach((button) => (button.selected = false));
 
 		// Set the selected state of the clicked button to true
 		button.selected = true;
+		this.selectedButton = button;
+	}
+
+	onRatingSubmit() {
+		if (this.selectedButton && this.selectedButton.selected) {
+			this.isSubmited = true;
+		}
 	}
 }
